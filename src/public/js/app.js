@@ -18,6 +18,8 @@ socket.addEventListener("message", (message) => {
   const li = document.createElement("li");
   li.innerText = message.data;
   messageList.append(li);
+  
+  
 });
   
 socket.addEventListener("close", () => {
@@ -29,6 +31,7 @@ function handleSubmit(event) {
   const input = messageForm.querySelector("input");
   socket.send(makeMessage("new_message", input.value));
   input.value = "";
+
 }
 
 function handleNickSubmit(event) {
